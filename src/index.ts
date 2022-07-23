@@ -1,11 +1,12 @@
 import express from "express";
 import {Request, Response} from 'express';
+import mysql from 'mysql';
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get("/Id/:id/Name/:name", (req: Request, res: Response) => {
+app.get("/details/:id", (req: Request, res: Response) => {
   res.send({
     message: "hello",
     data: req.params.id,
